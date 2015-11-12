@@ -39,17 +39,19 @@
         [textArr addObject:@{@"lat": @(113.2335329), @"lng": @(23.1874345)}];
     }
     
+    // 2. create folder
     NSString *saveInFolder = [FMZipManager createFolderWithName:@"walk" inDirectory:FMZMPathTmp];
 //    NSString *saveInFolder = [NSTemporaryDirectory() stringByAppendingPathComponent:@"walk"];
 //    [[NSFileManager defaultManager] createDirectoryAtPath:saveInFolder withIntermediateDirectories:YES attributes:nil error:nil];
 
     
-    // 2. generate plist
+    // 3. generate plist
     NSString *fileName = [NSString stringWithFormat:@"walk-geo-%ld", time(NULL)];
     NSString *plistFilePath = [saveInFolder stringByAppendingPathComponent:[fileName stringByAppendingPathExtension:@"plist"]];
     [textArr writeToFile:plistFilePath atomically:YES];
     NSLog(@"plist file path: %@", plistFilePath);
     
+    // 4. zip
     NSString *zipFilePath = [FMZipManager zipOneFile:plistFilePath];
     NSLog(@"zipFilePath: %@", zipFilePath);
     
