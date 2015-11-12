@@ -37,7 +37,6 @@
 		E1C7EC0B1BF4398900523CF2 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = E1C7EBDC1BF4398900523CF2 /* trees.c */; };
 		E1C7EC0C1BF4398900523CF2 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = E1C7EBDE1BF4398900523CF2 /* uncompr.c */; };
 		E1C7EC0D1BF4398900523CF2 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = E1C7EBE11BF4398900523CF2 /* zutil.c */; };
-		E1C7EC1D1BF43B4B00523CF2 /* ZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C7EC1C1BF43B4B00523CF2 /* ZipManager.m */; };
 		E1C7EC211BF4412A00523CF2 /* FMZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C7EC201BF4412A00523CF2 /* FMZipManager.m */; };
 /* End PBXBuildFile section */
 
@@ -110,8 +109,6 @@
 		E1C7EBE01BF4398900523CF2 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
 		E1C7EBE11BF4398900523CF2 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		E1C7EBE21BF4398900523CF2 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
-		E1C7EC1B1BF43B4B00523CF2 /* ZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipManager.h; path = ZipManager/ZipManager.h; sourceTree = "<group>"; };
-		E1C7EC1C1BF43B4B00523CF2 /* ZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipManager.m; path = ZipManager/ZipManager.m; sourceTree = "<group>"; };
 		E1C7EC1F1BF4412A00523CF2 /* FMZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMZipManager.h; path = FMZipManager/FMZipManager.h; sourceTree = "<group>"; };
 		E1C7EC201BF4412A00523CF2 /* FMZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMZipManager.m; path = FMZipManager/FMZipManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,7 +149,6 @@
 				E1C7EB911BF4395D00523CF2 /* ViewController.h */,
 				E1C7EB921BF4395D00523CF2 /* ViewController.m */,
 				E1C7EC1E1BF4410F00523CF2 /* FMZipManager */,
-				E1C7EC1A1BF43B2100523CF2 /* ZipManager */,
 				E1C7EB941BF4395D00523CF2 /* Main.storyboard */,
 				E1C7EB9A1BF4395D00523CF2 /* Assets.xcassets */,
 				E1C7EB9C1BF4395D00523CF2 /* LaunchScreen.storyboard */,
@@ -267,15 +263,6 @@
 			path = ZLib;
 			sourceTree = "<group>";
 		};
-		E1C7EC1A1BF43B2100523CF2 /* ZipManager */ = {
-			isa = PBXGroup;
-			children = (
-				E1C7EC1B1BF43B4B00523CF2 /* ZipManager.h */,
-				E1C7EC1C1BF43B4B00523CF2 /* ZipManager.m */,
-			);
-			name = ZipManager;
-			sourceTree = "<group>";
-		};
 		E1C7EC1E1BF4410F00523CF2 /* FMZipManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,7 +355,6 @@
 				E1C7EC011BF4398900523CF2 /* crc32.c in Sources */,
 				E1C7EBFB1BF4398900523CF2 /* OZZipException.m in Sources */,
 				E1C7EC031BF4398900523CF2 /* gzclose.c in Sources */,
-				E1C7EC1D1BF43B4B00523CF2 /* ZipManager.m in Sources */,
 				E1C7EC211BF4412A00523CF2 /* FMZipManager.m in Sources */,
 				E1C7EC081BF4398900523CF2 /* inffast.c in Sources */,
 				E1C7EBFF1BF4398900523CF2 /* adler32.c in Sources */,

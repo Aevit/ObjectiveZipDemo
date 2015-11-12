@@ -41,9 +41,6 @@
     
     // 2. create folder
     NSString *saveInFolder = [FMZipManager createFolderWithName:@"walk" inDirectory:FMZMPathTmp];
-//    NSString *saveInFolder = [NSTemporaryDirectory() stringByAppendingPathComponent:@"walk"];
-//    [[NSFileManager defaultManager] createDirectoryAtPath:saveInFolder withIntermediateDirectories:YES attributes:nil error:nil];
-
     
     // 3. generate plist
     NSString *fileName = [NSString stringWithFormat:@"walk-geo-%ld", time(NULL)];
@@ -51,12 +48,16 @@
     [textArr writeToFile:plistFilePath atomically:YES];
     NSLog(@"plist file path: %@", plistFilePath);
     
+    
+    
     // 4. zip
     NSString *zipFilePath = [FMZipManager zipOneFile:plistFilePath];
     NSLog(@"zipFilePath: %@", zipFilePath);
     
+    
+    // unzip
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"please go to delete the plist now for test: %@", plistFilePath);
+        NSLog(@"please go to delete the plist now for test: %@ ---delete this file \n\n", plistFilePath);
         NSString *unzipRs = [FMZipManager unzipFile:zipFilePath];
         NSLog(@"unzip in path: %@", unzipRs);
     });
