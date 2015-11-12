@@ -3,6 +3,7 @@
 Wrap apis of zip and unzip.  
 
 Can zip a file or all files of a folder.  
+Can unzip with folders if there is folder in the zip file.  
 
 Just wrapped based on [Objective-Zip](https://github.com/gianlucabertani/Objective-Zip).
 
@@ -45,9 +46,11 @@ NSString *plistFilePath = [saveInFolder stringByAppendingPathComponent:[fileName
 [textArr writeToFile:plistFilePath atomically:YES];
 NSLog(@"plist file path: %@", plistFilePath);
 
-// 4. zip
+// 4. test zip
 NSString *zipFilePath = [FMZipManager zipOneFile:plistFilePath];
 NSLog(@"zipFilePath: %@", zipFilePath);
+
+// see the result here: zipFilePath
 ```
 
 ###Unzip File

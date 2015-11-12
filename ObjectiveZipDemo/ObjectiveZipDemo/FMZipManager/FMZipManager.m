@@ -146,19 +146,19 @@
         }
         // Check if it's a directory
         if ([info.name hasSuffix:@"/"]) {
-            NSString *dirPath= [documentsPath stringByAppendingPathComponent:info.name];
+            NSString *dirPath = [documentsPath stringByAppendingPathComponent:info.name];
             [[NSFileManager defaultManager] createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:NULL];
             continue;
         }
         
         // Create file
-        NSString *filePath= [documentsPath stringByAppendingPathComponent:info.name];
+        NSString *filePath = [documentsPath stringByAppendingPathComponent:info.name];
         [[NSFileManager defaultManager] createFileAtPath:filePath contents:[NSData data] attributes:nil];
-        NSFileHandle *file= [NSFileHandle fileHandleForWritingAtPath:filePath];
+        NSFileHandle *file = [NSFileHandle fileHandleForWritingAtPath:filePath];
         
         // Seek file in zip
         [unzipFile locateFileInZip:info.name];
-        OZZipReadStream *readStream= [unzipFile readCurrentFileInZip];
+        OZZipReadStream *readStream = [unzipFile readCurrentFileInZip];
         
         // Reset buffer
         [buffer setLength:BUFFER_SIZE];
@@ -201,7 +201,7 @@
     NSString *finalPath = [[FMZipManager getDirectoryByZmPath:zmPath] stringByAppendingPathComponent:folderName];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isDir = FALSE;
+    BOOL isDir;
     BOOL isDirExist = [fileManager fileExistsAtPath:folderName isDirectory:&isDir];
     if (!(isDirExist && isDir)) {
         BOOL bCreateDir = [fileManager createDirectoryAtPath:finalPath withIntermediateDirectories:YES attributes:nil error:nil];

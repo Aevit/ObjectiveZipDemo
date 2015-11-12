@@ -49,16 +49,17 @@
     [textArr writeToFile:plistFilePath atomically:YES];
     NSLog(@"plist file path: %@", plistFilePath);
     
-    
-    
-    // 4. zip
+    // 4. test zip
     NSString *zipFilePath = [FMZipManager zipOneFile:plistFilePath];
     NSLog(@"zipFilePath: %@", zipFilePath);
     
     
-    // unzip
+    // delete the plist file
+    [[NSFileManager defaultManager] removeItemAtPath:plistFilePath error:nil];
+    
+    // test unzip
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"please go to delete the plist now for test: %@ ---delete this file \n\n", plistFilePath);
+        NSLog(@"will unzip: %@", zipFilePath);
         NSString *unzipRs = [FMZipManager unzipFile:zipFilePath];
         NSLog(@"unzip in path: %@", unzipRs);
     });
