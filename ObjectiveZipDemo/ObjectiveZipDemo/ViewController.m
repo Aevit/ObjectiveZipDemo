@@ -33,6 +33,7 @@
 }
 
 - (void)clickBtnPressed:(UIButton*)sender {
+    
     // 1. generate test data
     NSMutableArray *textArr = [NSMutableArray array];
     for (int i = 0; i < 5041; i++) {

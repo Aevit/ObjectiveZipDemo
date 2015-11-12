@@ -141,6 +141,9 @@
         
         ZMLog(@"length: %llu, name: %@, date: %@, level: %ld\n\n", info.length, info.name, info.date, (long)info.level);
         
+        if ([info.name rangeOfString:@"__MACOSX"].location != NSNotFound || [info.name rangeOfString:@".DS_Store"].location != NSNotFound) {
+            continue;
+        }
         // Check if it's a directory
         if ([info.name hasSuffix:@"/"]) {
             NSString *dirPath= [documentsPath stringByAppendingPathComponent:info.name];

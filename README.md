@@ -143,4 +143,4 @@ easy to use like this:
 ---
 ###License
 
-This code is distributed under the terms and conditions of the [MIT license](https://raw.githubusercontent.com/Aevit/ObjectiveZipDemo/master/LICENSE). 
+Portions of ObjectiveZipDemo are licensed under the original minizip license. See the minizip headers for details. All other parts of this project are licensed under the MIT license, see LICENSE.
